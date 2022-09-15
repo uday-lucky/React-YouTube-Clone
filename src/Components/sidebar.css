@@ -1,16 +1,30 @@
-.sidebar{
-    flex: 0.2;
+.sidebar {
+
    
+    flex: 0.2;
+     position: fixed;
+    left: 0px;
+    top: 60px;
+    bottom: 0px;
+   
+    background-color: white;
+
     
 }
 
-.sidebar-items{
+.sidebar-items {
     display: flex;
     align-items: center;
-    margin:10px;
+    margin: 10px;
     padding: 10px;
 }
 
-.sidebar-itemtitle{
+.sidebar-itemtitle {
     margin-left: 15px;
+}
+
+.link{
+    text-decoration: none;
+   
+    
 }

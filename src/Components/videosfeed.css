@@ -1,9 +1,11 @@
 .videosfeed{
-    flex: 0.8;
+   
     display: flex;
     flex-wrap: wrap;
+    position: sticky;
+   overflow: scroll;
+    margin-left: 250px;
+
 }
 
-.videosfeed-item{
 
-}

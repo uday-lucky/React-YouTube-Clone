@@ -8,11 +8,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
-import React from "react";
+import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate()
+function onsubmit(){
+  //e.preventDefault()
+        if(searchItem) {
+            navigate(`/search/${searchItem}`)
+            setSearchItem('')
+        }
+}
+
+  const [searchItem,setSearchItem]=useState("");
   return (
     <div className="header" >
       <div className="header_left">
@@ -25,9 +35,9 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="header_center">
-        <input placeholder="search">
+        <input value={searchItem} placeholder="search" onChange={(e)=>{setSearchItem(e.target.value)}}>
         </input>
-        <FontAwesomeIcon className="header_icon_spacing search" icon={faMagnifyingGlass} />
+        <FontAwesomeIcon onClick={()=>{onsubmit()}} className="header_icon_spacing search" icon={faMagnifyingGlass} />
       </div>
 
       <div className="header_right">
